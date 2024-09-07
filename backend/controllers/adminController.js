@@ -23,7 +23,7 @@ const loginAdmin = async (req, res) => {
             return res.json({ success: false, message: "Invalid credentials" });
         }
 
-        const token =  jwt.sign({ _id :  user._id }, process.env.JWT_SECRET)
+        const token =  jwt.sign({ id :  user._id }, process.env.JWT_SECRET)
 
         return res.json({ success: true, message: "Logged in successfully", token });
     } catch (error) {
@@ -181,4 +181,8 @@ const validateAdmin = async (req, res) => {
     }
 }
 
-module.exports = { validateAdmin, loginAdmin, registerAdmin, registerAdmin2, adminOtp, sendMessages };
+const resetReg = async (req, res) => {
+    otps = {}
+}
+
+module.exports = { validateAdmin, loginAdmin, registerAdmin, registerAdmin2, adminOtp, sendMessages, resetReg };
