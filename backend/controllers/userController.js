@@ -198,6 +198,27 @@ const resetPassword = async(req, res) => {
     return res.json({ success: true, message: 'Password reset successfully', token});
 }
 
+const userDetails = async (req, res) => {
+    try {
+        // Fetch the user by ID
+        const user = await userModel.findById(req.body.userId);
+
+        // Check if user exists
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Extract relevant details
+        const { email, name, createdAt } = user;
+
+        // Send response with user details
+        return res.status(200).json({ email, name, createdAt });
+    } catch (error) {
+        // Handle any errors that occur
+        return res.status(500).json({ message: 'Server error', error });
+    }
+};
 
 
-module.exports = { loginUser, registerUser01, registerUser02, forgetPasswordOTP, resetPassword };
+
+module.exports = { loginUser, registerUser01, registerUser02, forgetPasswordOTP, resetPassword, userDetails };
