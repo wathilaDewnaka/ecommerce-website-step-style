@@ -4,7 +4,7 @@ const { userModel } = require("../models/userModel");
 const sgMail = require('@sendgrid/mail');
 const { adminModel } = require("../models/adminModel");
 
-const frontend_url = process.env.FRONT_END_URL
+const frontend_url = "https://ecommerce-website-step-style.vercel.app"
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const EXCHANGE_RATE = 300;
 
