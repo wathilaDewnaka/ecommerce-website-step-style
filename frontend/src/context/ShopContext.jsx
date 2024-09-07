@@ -14,7 +14,7 @@ export default function ShopContentProvider(props) {
   const [isFirstEffectDone, setIsFirstEffectDone] = useState(false);
   const [isSecondEffectDone, setIsSecondEffectDone] = useState(false);
 
-  const url = "http://localhost:4000";
+  const url = "https://ecommerce-website-step-style-backend.vercel.app/";
 
   const addToCart = async (itemId, sizeValue, colorValue) => {
     try {
