@@ -95,12 +95,12 @@ export default function Add({ url }) {
                 
                 if (!res.data.success) {
                     localStorage.removeItem("admintoken");
-                    window.location.href = "http://localhost:5174";
+                    window.location.href = "https://ecommerce-website-step-style-admin.vercel.app/";
                 }
             } catch (error) {
                 console.log(error)
                 localStorage.removeItem("admintoken");
-                window.location.href = "http://localhost:5174";
+                window.location.href = "https://ecommerce-website-step-style-admin.vercel.app/";
             }
         };
 
