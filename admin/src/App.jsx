@@ -14,7 +14,7 @@ import Registers from "./windows/Registers";
 import SendMessage from "./windows/SendMessage"
 
 export default function App() {
-  const url = "http://localhost:4000"
+  const url = "https://ecommerce-website-step-style-backend.vercel.app"
   const [log, setLog] = useState('')
 
   useEffect(() => {
