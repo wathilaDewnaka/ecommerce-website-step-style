@@ -12,8 +12,8 @@ export default function Product() {
   const navigate = useNavigate();
 
   const product = all_products.find((e) => e._id === productId);
-  const [selectedColor, setSelectedColor] = useState("");
-  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("Black");
+  const [selectedSize, setSelectedSize] = useState("M");
 
   if (!product) {
     return <Error />;
@@ -28,19 +28,11 @@ export default function Product() {
   };
 
   const handleAddToCart = () => {
-    if (selectedColor && selectedSize) {
-      addToCart(product._id, selectedSize, selectedColor);
-    } else {
-      addToCart(product._id, "M", "Black");
-    }
+    addToCart(product._id, selectedSize, selectedColor);
   };
 
   const handleRemoveFromCart = () => {
-    if (selectedColor && selectedSize) {
-      removeCart(product._id, selectedSize, selectedColor);
-    } else {
-      removeCart(product._id, "M", "Black")
-    }
+    removeCart(product._id, selectedSize, selectedColor);
   };
 
   return (
