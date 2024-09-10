@@ -12,7 +12,7 @@ export default function Product() {
   const navigate = useNavigate();
 
   const product = all_products.find((e) => e._id === productId);
-  const [selectedColor, setSelectedColor] = useState("Black");
+  const [selectedColor, setSelectedColor] = useState("black");
   const [selectedSize, setSelectedSize] = useState("M");
 
   if (!product) {
