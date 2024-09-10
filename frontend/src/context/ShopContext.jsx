@@ -84,7 +84,7 @@ export default function ShopContentProvider(props) {
       if (cartItems[item] > 0) {
         const info = all_products.find((product) => product._id === item);
         if (info) {
-          newTotal = info.price * cartItems[item];
+          newTotal += info.price * cartItems[item];
         }
       }
     }
