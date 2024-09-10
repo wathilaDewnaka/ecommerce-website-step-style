@@ -102,6 +102,11 @@ export default function Order() {
         all_products.forEach((item) => {
             if (cartItems[item._id] > 0) {
                 let itemInfo = { ...item, quantity: cartItems[item._id], size: size[item._id], color: color[item._id] };
+                
+                // Remove description and image
+                delete itemInfo.description;
+                delete itemInfo.image;
+                
                 orderItems.push(itemInfo);
             }
         });
