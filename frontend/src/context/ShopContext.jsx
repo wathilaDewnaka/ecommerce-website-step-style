@@ -27,7 +27,7 @@ export default function ShopContentProvider(props) {
         [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,
       }));
       setSize((prev) => ({ ...prev, [itemId]: sizeValue }));
-      setColor((prev) => ({ ...prev, [itemId]: colorValue }));
+      setColor((prev) => ({ ...prev, [itemId]: colorValue.split("-")[0].charAt(0).toUpperCase() + colorValue.split("-")[0].slice(1) }));
 
       if (token) {
         await axios.post(url + "/api/cart/add", { itemId, size: sizeValue, color: colorValue }, { headers: { token } });
